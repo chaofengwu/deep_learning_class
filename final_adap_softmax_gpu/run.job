@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+#SBATCH --mail-user=chaofeng@uchicago.edu
+#SBATCH --mail-type=ALL
+#SBATCH --output=/home/chaofeng/slurm/slurm_out/%j.%N.stdout
+#SBATCH --error=/home/chaofeng/slurm/slurm_out/%j.%N.stderr
+#SBATCH --partition=pascal
+#SBATCH --job-name=cuda_project
+
+export PATH=$PATH:/usr/local/cuda-8.0/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH=/usr/local/cuda8.0/lib64
+
+cd /scratch/chaofeng/TTIC31230/LSTM
+bash run.sh
