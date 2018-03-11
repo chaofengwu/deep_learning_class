@@ -4,7 +4,7 @@ from torch.autograd import Variable
 
 
 from math import sqrt
-
+# reference: https://github.com/rosinality/adaptive-softmax-pytorch
 class AdaptiveSoftmax(nn.Module):
     def __init__(self, input_size, cutoff):
         super().__init__()

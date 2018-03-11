@@ -239,8 +239,8 @@ try:
             # Anneal the learning rate if no improvement has been seen in the validation dataset.
             lr /= 4.0
             # optimizer = getattr(torch.optim, args.optim)(model.parameters(), lr=lr, weight_decay=args.weight_decay)
-            if epoch > 2:
-                lr = 0.001
+            # if epoch > 2:
+            #     lr = 0.001
 except KeyboardInterrupt:
     print('-' * 89)
     print('Exiting from training early')

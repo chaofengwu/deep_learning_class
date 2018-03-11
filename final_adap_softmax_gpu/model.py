@@ -140,7 +140,7 @@ class RNNModel(nn.Module):
             self.rnn = nn.RNN(ninp, nhid, nlayers, nonlinearity=nonlinearity, dropout=dropout)
 
         if softmax:
-            self.decoder = AdaptiveSoftmax(nhid, [*cutoff, ntoken+1])
+            self.decoder = AdaptiveSoftmax(nhid, [2000, 10000, ntoken+1])
         else:
             self.decoder = nn.Linear(nhid, ntoken+1)
 
